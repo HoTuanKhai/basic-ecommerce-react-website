@@ -8,6 +8,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider';
 import ProductDetails from './pages/ProductDetails';
 import CartProvider from './context/CartProvider';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/auth" element={<Auth/>} />
-            <Route path="/checkout" element={<Checkout/>} />
+            <Route path="/checkout" element={<ProtectedRoute><Checkout/></ProtectedRoute>} />
             <Route path="/products/:id" element={<ProductDetails/>} />
           </Routes>
         </div>
